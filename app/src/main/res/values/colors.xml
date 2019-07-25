@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/grey</color>
+    <color name="colorPrimaryDark">@color/text_color</color>
+    <color name="colorAccent">@color/divider</color>
+
+    <color name="primary">#e97023</color>
+    <color name="primaryDark">#ca3209</color>
+    <color name="accent">#FFFFFF</color>
+
+    <color name="secondary">#e1762e</color>
+
+    <color name="black">#000</color>
+    <color name="text_color">#646464</color>
+    <color name="text_color_dark">@color/black</color>
+    <color name="grey">#9E9E9E</color>
+    <color name="divider">#e8e8e8</color>
+
+    <color name="hint_color">#AA808080</color>
+
+    <color name="transparent">#0000ffff</color>
+
+    <color name="light_orange">#F2C4A3</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="green_light">#02c47d</color>
+    <color name="material_ripple">#00FFFFFF</color>
+    <color name="progress_bg">#D8d8d8</color>
+    <color name="divider_grey">#D6D6D6</color>
+
+
+    <color name="background">#EFEFEF</color>
+    <color name="placeholder_grey">#AAADC4</color>
+    <color name="placeholder_grey_20">#33AAADC4</color>
+
+
+    <!--<item android:offset="0" android:color="#FFEA7625"/>-->
+    <!--<item android:offset="0.9858" android:color="#FFC32A26"/>-->
+
+</resources>

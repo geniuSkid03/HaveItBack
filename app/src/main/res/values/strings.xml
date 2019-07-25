@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Have It Back</string>
+
+    <string name="curr_ind">\u20B9</string>
+
+    <string name="facebook_app_id">2080635922244842</string>
+
+    <string name="transition_in_image">Image Transition</string>
+    <string name="transition_in_text">Text Transition</string>
+    <string name="transition_in_text_1">Text Transition 1</string>
+    <string name="login_hint">When we give cheerfully and accept gratefully,\neveryone is blessed.</string>
+    <string name="login_to_continue">Login to continue</string>
+    <string name="skip">Skip</string>
+    <string name="start">Start</string>
+    <string name="profile">Profile</string>
+    <string name="home">Home</string>
+    <string name="intro_title_1">Title 1</string>
+    <string name="intro_content_1">Content 1</string>
+    <string name="intro_title_2">intro_title_2</string>
+    <string name="intro_content_2">intro_content_2</string>
+    <string name="intro_title_3">intro_title_3</string>
+    <string name="intro_content_3">intro_content_3</string>
+
+
+</resources>

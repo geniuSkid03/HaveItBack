@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/maps"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.main.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/home_nav"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            app:cardElevation="@dimen/margin_4"
+            android:id="@+id/find_item"
+            app:cardCornerRadius="@dimen/margin_4"
+            app:cardUseCompatPadding="true"
+            android:layout_height="@dimen/margin_120">
+
+            <TextView
+                android:textSize="@dimen/margin_20"
+                android:textColor="@color/black"
+                android:text="FIND\nLOST ITEM"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            app:cardElevation="@dimen/margin_4"
+            android:id="@+id/report_item"
+            app:cardCornerRadius="@dimen/margin_4"
+            app:cardUseCompatPadding="true"
+            android:layout_height="@dimen/margin_120">
+
+            <TextView
+                android:textSize="@dimen/margin_20"
+                android:textColor="@color/black"
+                android:text="REPORT\nFOUND ITEM"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"/>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:layout_width="match_parent"
+        android:id="@+id/home_nav"
+        android:background="@color/white"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:elevation="@dimen/margin_4"
+        app:menu="@menu/home_bottom_menu"
+        app:itemHorizontalTranslationEnabled="true"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
