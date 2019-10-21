@@ -66,4 +66,14 @@ public class BaseActivity extends AppCompatActivity  {
             }
         }
     }
+
+    //for starting activity without intent values
+    protected void goTo(Context from, Class to, Bundle bundle,boolean close) {
+        if (!this.getClass().getSimpleName().equals(to.getClass().getSimpleName())) {
+            startActivity(new Intent(from, to).putExtras(bundle));
+            if (close) {
+                finish();
+            }
+        }
+    }
 }

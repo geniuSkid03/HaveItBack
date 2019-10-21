@@ -3,13 +3,16 @@ package com.geniuskid.haveitback.adapters;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.geniuskid.haveitback.R;
 import com.geniuskid.haveitback.pojos.LostItems;
 
@@ -46,26 +49,37 @@ public class ItemsListAdapter extends RecyclerView.Adapter<ItemsListAdapter.Circ
 
     class CircularFeedView extends RecyclerView.ViewHolder {
 
-        private TextView titleTv, descTv;
+        private TextView titleTv, descTv, dateTv;
         private ImageView imageView;
+        private CardView itemsParent;
 
         CircularFeedView(View view) {
             super(view);
 
             titleTv = itemView.findViewById(R.id.title);
             descTv = itemView.findViewById(R.id.desc);
+            dateTv = itemView.findViewById(R.id.date);
             imageView = itemView.findViewById(R.id.image);
+            itemsParent = itemView.findViewById(R.id.itemsParent);
         }
 
-        void setCicularFeedView(int position) {
+        void setCicularFeedView(final int position) {
             setView(circularDataItemsArrayList.get(position));
+
+            itemsParent.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    circularCallBack.onItemClicked(position, imageView);
+                }
+            });
         }
 
         private void setView(LostItems circularDataItems) {
             titleTv.setText(circularDataItems.getName());
             descTv.setText(circularDataItems.getDate());
+            dateTv.setText(circularDataItems.getDate());
 
-            imageView.setImageResource(R.drawable.maps);
+            Glide.with(context).load(circularDataItems.getImage()).into(imageView);
         }
     }
 

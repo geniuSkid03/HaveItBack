@@ -28,7 +28,7 @@ public class SplashActivity extends BaseActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (dataStorage.getBoolean(Keys.IS_LOGGED_IN)) {
+                if (dataStorage.getBoolean("is-logged-in")) {
                     goTo(SplashActivity.this, MainActivity.class, true);
                 } else {
                     goTo(SplashActivity.this, LoginOrSignUpActivity.class, true);

@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.geniuskid.haveitback">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.reportView.ItemsListActivity"></activity>
+        <activity android:name=".activities.itemDetails.ItemDetailsActivity"></activity>
+        <activity android:name=".activities.reportNew.CreateNewReportActivity" />
+        <activity android:name=".activities.profile.ProfileActivity" />
+        <activity android:name=".activities.reportView.ItemsListActivity" />
         <activity android:name=".activities.loginSignup.LoginOrSignUpActivity" />
         <activity android:name=".activities.main.MainActivity" />
         <activity android:name=".activities.splash.SplashActivity">
@@ -21,7 +30,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".utils.BaseActivity" />
-        <activity android:name=".activities.intro.IntroActivity" />
     </application>
 
 </manifest>

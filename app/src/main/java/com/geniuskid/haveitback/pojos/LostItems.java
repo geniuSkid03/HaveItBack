@@ -4,6 +4,28 @@ public class LostItems {
 
     private String id, name, image, date;
 
+    private String desc, place;
+
+    public LostItems() {
+
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
     public LostItems(String id, String name, String image, String date) {
         this.id = id;
         this.name = name;
