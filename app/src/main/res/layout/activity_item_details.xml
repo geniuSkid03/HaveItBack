@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".activities.itemDetails.ItemDetailsActivity">
+
+    <RelativeLayout
+        android:id="@+id/listTool"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:elevation="@dimen/margin_6">
+
+        <ImageView
+            android:id="@+id/backIv"
+            android:layout_width="@dimen/margin_40"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_6"
+            android:padding="@dimen/margin_6"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/margin_12"
+            android:layout_toEndOf="@+id/backIv"
+            android:text="Item Details"
+            android:textSize="@dimen/txt_22" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        tools:src="@drawable/ic_launcher_background"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:layout_height="@dimen/margin_150" />
+
+    <TextView
+        android:id="@+id/nameTv"
+        android:paddingStart="@dimen/margin_8"
+        android:paddingEnd="@dimen/margin_8"
+        tools:text="@string/app_name"
+        android:textSize="@dimen/txt_18"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/datetTv"
+        android:paddingStart="@dimen/margin_8"
+        android:paddingEnd="@dimen/margin_8"
+        tools:text="@string/app_name"
+        android:textSize="@dimen/txt_14"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/descTv"
+        android:paddingStart="@dimen/margin_8"
+        android:paddingEnd="@dimen/margin_8"
+        tools:text="@string/app_name"
+        android:textSize="@dimen/txt_18"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:id="@+id/claimBtn"
+        android:layout_gravity="center"
+        android:text="Claim"
+        android:paddingStart="@dimen/margin_16"
+        android:paddingEnd="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_12"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
