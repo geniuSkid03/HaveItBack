@@ -1,5 +1,6 @@
 package com.geniuskid.haveitback.activities.itemDetails;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
@@ -19,7 +20,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
     private LostItems lostItems;
 
     AppCompatButton claimBtn;
-    TextView descTv, datetTv, nameTv;
+    TextView descTv, datetTv, nameTv, infoTv;
     ImageView imageView, backIv;
 
     @Override
@@ -33,11 +34,12 @@ public class ItemDetailsActivity extends AppCompatActivity {
         nameTv = findViewById(R.id.nameTv);
         imageView = findViewById(R.id.imageView);
         backIv = findViewById(R.id.backIv);
+        infoTv = findViewById(R.id.updaterInfoTv);
 
         claimBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ItemDetailsActivity.this, "Available in future!", Toast.LENGTH_SHORT).show();
+                openEmailIntent();
             }
         });
         backIv.setOnClickListener(new View.OnClickListener() {
@@ -64,5 +66,15 @@ public class ItemDetailsActivity extends AppCompatActivity {
         Glide.with(this).load(lostItems.getImage()).into(imageView);
         nameTv.setText(lostItems.getName());
         datetTv.setText(lostItems.getDate());
+        infoTv.setText(String.format("Name: %s\nEmail: %s", lostItems.getPostedNum(), lostItems.getPostedName()));
+    }
+
+
+    private void openEmailIntent() {
+        Intent emailIntent  = new Intent(Intent.ACTION_SEND);
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{lostItems.getPostedNum()});
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Regarding: "+lostItems.getName());
+        startActivity(Intent.createChooser(emailIntent, "Send email via..."));
     }
 }

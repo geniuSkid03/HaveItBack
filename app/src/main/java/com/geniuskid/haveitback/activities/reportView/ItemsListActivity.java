@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
@@ -83,13 +84,18 @@ public class ItemsListActivity extends BaseActivity {
     private void loadItems() {
         showProgress("Loading lost items...");
         itemsRv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        itemsListAdapter = new ItemsListAdapter(this, lostItemsArrayList, new ItemsListAdapter.CircularCallBack() {
+        itemsListAdapter = new ItemsListAdapter(this, lostItemsArrayList,false, new ItemsListAdapter.CircularCallBack() {
             @Override
             public void onItemClicked(int position, ImageView imageView) {
                 LostItems lostItems = lostItemsArrayList.get(position);
                 Bundle bundle = new Bundle();
                 bundle.putString("items", new Gson().toJson(lostItems));
                 goTo(ItemsListActivity.this, ItemDetailsActivity.class, bundle,false);
+            }
+
+            @Override
+            public void onClaimClicked(int position) {
+
             }
         });
         itemsRv.setAdapter(itemsListAdapter);
@@ -146,14 +152,23 @@ public class ItemsListActivity extends BaseActivity {
 
             LostItems lostItems = new LostItems();
 
-            lostItems.setId((String) map.get("id"));
-            lostItems.setName((String) map.get("name"));
-            lostItems.setImage((String) map.get("image"));
-            lostItems.setDesc((String) map.get("desc"));
-            lostItems.setPlace((String) map.get("place"));
-            lostItems.setDate((String) map.get("date"));
+            String isClaimed = (String) map.get("isClaimed");
 
-            lostItemsArrayList.add(lostItems);
+            if(isClaimed != null &&
+                    !TextUtils.isEmpty(isClaimed) &&
+                    isClaimed.equalsIgnoreCase("1")) {
+                lostItems.setId((String) map.get("id"));
+                lostItems.setName((String) map.get("name"));
+                lostItems.setImage((String) map.get("image"));
+                lostItems.setDesc((String) map.get("desc"));
+                lostItems.setPlace((String) map.get("place"));
+                lostItems.setDate((String) map.get("date"));
+                lostItems.setPostedName((String) map.get("postedName"));
+                lostItems.setIsClaimed((String) map.get("isClaimed"));
+                lostItems.setPostedNum((String) map.get("postedNum"));
+
+                lostItemsArrayList.add(lostItems);
+            }
         }
 
         updateUi();

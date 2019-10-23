@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.itemDetails.ItemDetailsActivity"></activity>
+        <activity android:name=".activities.myReports.MyReportsActivity"></activity>
+        <activity android:name=".activities.itemDetails.ItemDetailsActivity" />
         <activity android:name=".activities.reportNew.CreateNewReportActivity" />
         <activity android:name=".activities.profile.ProfileActivity" />
         <activity android:name=".activities.reportView.ItemsListActivity" />

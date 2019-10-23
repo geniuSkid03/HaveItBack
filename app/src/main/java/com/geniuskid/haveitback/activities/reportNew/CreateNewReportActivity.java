@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.geniuskid.haveitback.R;
 import com.geniuskid.haveitback.pojos.LostItems;
+import com.geniuskid.haveitback.utils.DataStorage;
 import com.geniuskid.haveitback.utils.IntentHelper;
 import com.geniuskid.haveitback.utils.Keys;
 import com.geniuskid.haveitback.utils.imageHelpers.ImageHelpers;
@@ -262,6 +263,7 @@ public class CreateNewReportActivity extends AppCompatActivity {
     }
 
     private void onImageUploaded(Uri uploadedPosterUri) {
+        DataStorage dataStorage = new DataStorage(this);
         showProgress(getString(R.string.updating_post));
 
         LostItems lostItems = new LostItems();
@@ -270,9 +272,12 @@ public class CreateNewReportActivity extends AppCompatActivity {
         lostItems.setImage(String.valueOf(uploadedPosterUri));
         lostItems.setDate(date);
         lostItems.setPlace(place);
+        lostItems.setPostedName(dataStorage.getString("username"));
+        lostItems.setPostedNum(dataStorage.getString("email"));
 
         String id = postDbRef.push().getKey();
         lostItems.setId(id);
+        lostItems.setIsClaimed("1");
 
         postDbRef.child(id).setValue(lostItems, new DatabaseReference.CompletionListener() {
             @Override

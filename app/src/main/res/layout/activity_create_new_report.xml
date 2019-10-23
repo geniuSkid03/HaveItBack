@@ -3,33 +3,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activities.profile.ProfileActivity">
 
-    <RelativeLayout
+    <android.support.v7.widget.CardView
         android:id="@+id/profileTool"
-        android:elevation="@dimen/margin_6"
         android:layout_width="match_parent"
-        android:background="@color/white"
-        android:layout_height="?actionBarSize">
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/margin_6"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/margin_0">
 
-        <ImageView
-            android:id="@+id/backIv"
-            android:layout_width="@dimen/margin_40"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/margin_6"
-            android:padding="@dimen/margin_6"
-            android:src="@drawable/ic_arrow_back_black_24dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="?actionBarSize">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="@dimen/margin_12"
-            android:layout_toEndOf="@+id/backIv"
-            android:text="Create New Report"
-            android:textSize="@dimen/txt_22" />
+            <ImageView
+                android:id="@+id/backIv"
+                android:layout_width="@dimen/margin_40"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_6"
+                android:padding="@dimen/margin_6"
+                android:src="@drawable/ic_arrow_back_black_24dp" />
 
-    </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_12"
+                android:layout_toEndOf="@+id/backIv"
+                android:text="Create New Report"
+                android:textSize="@dimen/txt_22" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
 
     <LinearLayout
         android:layout_above="@+id/uploadBtn"

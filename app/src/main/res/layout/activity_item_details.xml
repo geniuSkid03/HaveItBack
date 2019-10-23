@@ -2,34 +2,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".activities.itemDetails.ItemDetailsActivity">
 
-    <RelativeLayout
+    <android.support.v7.widget.CardView
         android:id="@+id/listTool"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:elevation="@dimen/margin_6">
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/margin_6"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/margin_0">
 
-        <ImageView
-            android:id="@+id/backIv"
-            android:layout_width="@dimen/margin_40"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/margin_6"
-            android:padding="@dimen/margin_6"
-            android:src="@drawable/ic_arrow_back_black_24dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="@dimen/margin_12"
-            android:layout_toEndOf="@+id/backIv"
-            android:text="Item Details"
-            android:textSize="@dimen/txt_22" />
+            <ImageView
+                android:id="@+id/backIv"
+                android:layout_width="@dimen/margin_40"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_6"
+                android:padding="@dimen/margin_6"
+                android:src="@drawable/ic_arrow_back_black_24dp" />
 
-    </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_12"
+                android:layout_toEndOf="@+id/backIv"
+                android:text="Item Details"
+                android:textSize="@dimen/txt_22" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
 
     <ImageView
         android:id="@+id/imageView"
@@ -61,6 +70,32 @@
 
     <TextView
         android:id="@+id/descTv"
+        android:paddingStart="@dimen/margin_8"
+        android:paddingEnd="@dimen/margin_8"
+        tools:text="@string/app_name"
+        android:textSize="@dimen/txt_18"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:layout_width="match_parent"
+        android:background="@color/divider_grey"
+        android:layout_height="@dimen/margin_1"/>
+
+    <TextView
+        android:paddingStart="@dimen/margin_8"
+        android:paddingEnd="@dimen/margin_8"
+        android:text="Updated by:"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/updaterInfoTv"
         android:paddingStart="@dimen/margin_8"
         android:paddingEnd="@dimen/margin_8"
         tools:text="@string/app_name"

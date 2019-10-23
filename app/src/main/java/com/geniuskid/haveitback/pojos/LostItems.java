@@ -3,8 +3,9 @@ package com.geniuskid.haveitback.pojos;
 public class LostItems {
 
     private String id, name, image, date;
-
     private String desc, place;
+    private String postedName, postedNum;
+    private String isClaimed;
 
     public LostItems() {
 
@@ -12,6 +13,30 @@ public class LostItems {
 
     public String getDesc() {
         return desc;
+    }
+
+    public String getPostedName() {
+        return postedName;
+    }
+
+    public void setPostedName(String postedName) {
+        this.postedName = postedName;
+    }
+
+    public String getPostedNum() {
+        return postedNum;
+    }
+
+    public void setPostedNum(String postedNum) {
+        this.postedNum = postedNum;
+    }
+
+    public String getIsClaimed() {
+        return isClaimed;
+    }
+
+    public void setIsClaimed(String isClaimed) {
+        this.isClaimed = isClaimed;
     }
 
     public void setDesc(String desc) {

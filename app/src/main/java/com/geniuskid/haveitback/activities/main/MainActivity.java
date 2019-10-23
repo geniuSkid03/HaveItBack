@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.geniuskid.haveitback.R;
+import com.geniuskid.haveitback.activities.myReports.MyReportsActivity;
 import com.geniuskid.haveitback.activities.profile.ProfileActivity;
 import com.geniuskid.haveitback.activities.reportNew.CreateNewReportActivity;
 import com.geniuskid.haveitback.activities.reportView.ItemsListActivity;
@@ -56,6 +57,9 @@ public class MainActivity extends BaseActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.menu_home:
+                        break;
+                    case R.id.my_reports:
+                        goTo(MainActivity.this, MyReportsActivity.class, false);
                         break;
                     case R.id.menu_profile:
                         goTo(MainActivity.this, ProfileActivity.class, false);
